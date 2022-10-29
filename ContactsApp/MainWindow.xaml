@@ -11,12 +11,17 @@
         <StackPanel Margin="10">
             <Button Content="New Contact" Click="Button_Click" />
             <TextBox Margin="0 5 0 5" TextChanged="TextBox_TextChanged" />
-            <ListView x:Name="contactsList" Margin="0 5 0 0" Height="300"
+            <ListView x:Name="contactsList" Margin="0 5 0 0" Height="445"
                       SelectionChanged="contactsList_SelectionChanged"
                       >
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <controls:ContactControl Width="800" Contact="{Binding .}"></controls:ContactControl>
+                        <controls:ContactControl  Contact="{Binding .}"></controls:ContactControl>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

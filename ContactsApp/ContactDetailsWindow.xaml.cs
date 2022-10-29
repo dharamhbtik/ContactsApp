@@ -25,6 +25,8 @@ namespace ContactsApp
         public ContactDetailsWindow(int id)
         {
             InitializeComponent();
+            Owner = Application.Current.MainWindow;
+            WindowStartupLocation = WindowStartupLocation.CenterOwner;
             LoadContacts(id);
         }
 
